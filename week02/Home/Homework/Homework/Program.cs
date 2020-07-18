@@ -315,7 +315,7 @@ namespace Homework
             }
             else
             {
-                Console.WriteLine($"The wors {word} is not a palindrome");
+                Console.WriteLine($"The word {word} is not a palindrome");
             }
         }
     }
