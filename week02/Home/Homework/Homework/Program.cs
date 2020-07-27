@@ -183,28 +183,29 @@ namespace Homework
                 //Array.Resize(ref odd, oddN);
                 //Console.WriteLine($" Odd: [{string.Join(" ,", odd)}] , Even: [{string.Join(", ", even)}]");
 
-                string oddS = "";
-                string evenS = "";
-                for (int x = 0; x < oddN; x++)
-                {
+            string oddS = "";
+            string evenS = "";
+            
+            for (int x = 0; x < oddN; x++)
+            {
 
-                    if (oddS != "")
-                    {
-                        oddS += ", ";
-                    }
-                    oddS += $"{odd[x]}";
-
-                }
-                for (int x = 0; x < evenN; x++)
+                if (oddS != "")
                 {
-                    if (evenS != "")
-                    {
-                        evenS += ", ";
-                    }
-                    evenS += $"{even[x]}";
+                    oddS += ", ";
                 }
-                Console.WriteLine($" Odd:[{oddS}], Even:[{evenS}]");
+                oddS += $"{odd[x]}";
             }
+            
+            for (int x = 0; x < evenN; x++)
+            {
+                if (evenS != "")
+                {
+                    evenS += ", ";
+                }
+                evenS += $"{even[x]}";
+            }
+            Console.WriteLine($" Odd:[{oddS}], Even:[{evenS}]");
+        }
 
             /// <summary>
             /// Find common elements between two arrays of integers.
@@ -251,12 +252,11 @@ namespace Homework
                     }
                 }
 
-                if (unique)
-                {
-                    Console.WriteLine("The characters are unique!");
-                }
-
+            if (unique)
+            {
+                Console.WriteLine("The characters are unique!");
             }
+        }
 
             /// <summary>
             /// Write code to remove duplicates from an unsorted linked list.
@@ -285,12 +285,11 @@ namespace Homework
                     }
                 }
 
-                foreach (string x in list)
-                {
-                    Console.WriteLine(x);
-                }
-
+            foreach (string x in list)
+            {
+                Console.WriteLine(x);
             }
+        }
 
             /// <summary>
             /// Write a function to check if a number is prime or not.
@@ -328,26 +327,22 @@ namespace Homework
                 string word = Console.ReadLine();
                 bool pal = true;
 
-                for (int i = 0; i < word.Length; i++)
+            for (int i = 0; i < word.Length/2; i++)
+            {
+                if (word[i] != word[word.Length - 1 - i])
                 {
-                    if (word[i] != word[word.Length - 1 - i])
-                    {
-                        pal = false;
-                        break;
-                    }
+                    pal = false;
+                    break;
                 }
-                if (pal)
-                {
-                    Console.WriteLine($"The word {word} is a palindrome");
-                }
-                else
-                {
-                    Console.WriteLine($"The wors {word} is not a palindrome");
-                }
-
             }
-
-
+            if (pal)
+            {
+                Console.WriteLine($"The word {word} is a palindrome");
+            }
+            else
+            {
+                Console.WriteLine($"The word {word} is not a palindrome");
+            }
         }
     }
 }
