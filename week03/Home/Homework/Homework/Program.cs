@@ -10,7 +10,31 @@ namespace Homework
     {
         static void Main(string[] args)
         {
+            SLinkedList list = new SLinkedList();
+            list.AddBeginning(list, 10);
+            list.AddBeginning(list, 9);
+            list.AddBeginning(list, 1);
+            list.AddBeginning(list, 12);
+            list.AddBeginning(list, 13);
 
+            Node current = list.start;
+            Node temp = null;
+            Node next = null;
+
+            while (current != null)
+            {
+                next = current.next;
+                current.next = temp;
+                temp = current;
+                current = next;
+
+            }
+            list.start = temp;
+
+            for (Node node = list.start; node != null; node = node.next)
+            {
+                Console.WriteLine(node.data);
+            }
         }
 
 
@@ -218,6 +242,21 @@ namespace Homework
         /// </summary>
         static void Ex11()
         {
+            SLinkedList list = new SLinkedList();
+            list.AddEnd(list, 10);
+            list.AddEnd(list, 9);
+            list.AddEnd(list, 1);
+            list.AddEnd(list, 12);
+            list.AddEnd(list, 13);
+
+            Node current = list.start;
+
+            while (current.next.next.next != null)
+            {
+                current = current.next;
+            }
+
+            Console.WriteLine($"The 3rd element from the end is: {current.data}");
 
         }
 
@@ -341,6 +380,30 @@ namespace Homework
         /// </summary>
         static void Ex15()
         {
+            SLinkedList list = new SLinkedList();
+            list.AddBeginning(list, 10);
+            list.AddBeginning(list, 9);
+            list.AddBeginning(list, 1);
+            list.AddBeginning(list, 12);
+            list.AddBeginning(list, 13);
+
+            Node current = list.start;
+            Node temp = current;
+            Node next = current.next;
+
+            while (current != null)
+            {
+                current = next;
+                next = current.next;
+                current.next = temp;
+                temp = current;
+            }
+            list.start = temp;
+
+            for (Node node = list.start; node != null; node = node.next)
+            {
+                Console.WriteLine(node.data);
+            }
 
         }
 
