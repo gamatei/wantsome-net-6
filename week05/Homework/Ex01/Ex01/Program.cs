@@ -39,10 +39,10 @@ namespace Ex01
                     new Student("Albu"),
                     new Student("Bahnovei",new Guid()),
                     new Student("Rusu"),
-                    new Student("Ionescu"),
-                    new Student("Ionescu"),
-                    new Student("Ionescu"),
-                    new Student("Ionescu"),
+                    new Student("Radu"),
+                    new Student("Mihai",new Guid()),
+                    new Student("Stan"),
+                    new Student("Mardare"),
                 }
             });
 
